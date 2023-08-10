@@ -5,6 +5,14 @@ import { ToDoList } from './ToDoList';
 import { ToDoItem } from './ToDoItem';
 import { CreateToDoButton } from './CreateToDoButton';
 
+const defaultToDos = [
+  {text: "Cocinar", completed: false},
+  {text: "Lavar", completed: false},
+  {text: "Limpiar", completed: true},
+  {text: "Comer", completed: true},
+  {text: "Cantar", completed: false},
+]
+
 function App() {
   return (
     <React.Fragment>
@@ -13,9 +21,9 @@ function App() {
       <ToDoSearch />
 
       <ToDoList>
-        <ToDoItem />
-        <ToDoItem />
-        <ToDoItem />
+        {defaultToDos.map(todo => (
+          <ToDoItem key={todo.text} text={todo.text} completed={todo.completed}/>
+        ))}
       </ToDoList>
 
       <CreateToDoButton />

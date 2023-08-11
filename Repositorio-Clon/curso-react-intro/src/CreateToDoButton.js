@@ -1,6 +1,10 @@
+import './CreateToDoButton.css';
+
 function CreateToDoButton(props) {
     return (
-        <button>+</button>
+        <button className="CreateToDoButton">
+            +
+        </button>
     )
 }
 

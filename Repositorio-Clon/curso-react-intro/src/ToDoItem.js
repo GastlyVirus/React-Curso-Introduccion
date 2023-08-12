@@ -4,7 +4,9 @@ function ToDoItem(props) {
   return (
     <li className="ToDoItem">
 
-      <span className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}>
+      <span 
+      className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
+      >
         v
       </span>
 

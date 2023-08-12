@@ -2,7 +2,8 @@ import './CreateToDoButton.css';
 
 function CreateToDoButton(props) {
     return (
-        <button className="CreateToDoButton">
+        <button className="CreateToDoButton"
+        onClick={()=> console.log("click")}>
             +
         </button>
     )

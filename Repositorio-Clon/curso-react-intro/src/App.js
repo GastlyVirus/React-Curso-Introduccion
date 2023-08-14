@@ -7,28 +7,42 @@ import { CreateToDoButton } from './CreateToDoButton';
 
 const defaultToDos = [
   { text: "Despertarse", completed: true },
-  { text: "Bañarse", completed: false },
+  { text: "Bañarse", completed: true },
   { text: "Desayunar", completed: false },
   { text: "Trabajar", completed: true },
-  { text: "Gimnasio", completed: false },
-  { text: "Jugar", completed: true },
-  { text: "Estudiar", completed: false },
+  { text: "Gimnasio", completed: true },
+  { text: "Jugar", completed: false },
+  { text: "Estudiar", completed: true },
   { text: "Manejar", completed: true },
-  { text: "Merendar", completed: true },
+  { text: "Merendar", completed: false },
 ]
 
 function App() {
-  const [toDos, setToDos] = React.useState(defaultToDos); // Guarda la lista de los To Dos
-  const [searchValue, setSearchValue] = React.useState(""); // Guarda el valor del input para buscar
-  const completedToDos = toDos.filter(todo => todo.completed).length; // Devuelve la cantidad de To Dos completados
-  const totalToDos = toDos.length; // Devuelve la cantidad total de To Dos
+  const [toDos, setToDos] = React.useState(defaultToDos); // Guarda la lista "defaultToDos"
+  const [searchValue, setSearchValue] = React.useState(""); // Guarda el valor del input "ToDoSearch" para buscar
+
+  const completedToDos = toDos.filter(toDo => toDo.completed).length; // Filtra los objetos del estado "toDos" que cumplan con la propiedad "completed" y devuelve la cantidad en numeros
+  const totalToDos = toDos.length; // Devuelve la cantidad total de objetos dentro del estado "toDos"
+
   const searchedToDos = toDos.filter((toDo) => {
     const toDoText = toDo.text.toLowerCase();
     const searchText = searchValue.toLowerCase();
     return toDoText.includes(searchText)
-  }); // Devuelve el renderizado de lo que se esta buscando
-  const completeToDo = () => {
+  }); // Devuelve el renderizado en "ToDoList" de lo que se esta buscando en el "searchValue"
+
+  const completeToDo = (text) => {
     const newToDos = [...toDos]; // Hago una copia de la lista de To Dos
+    const toDoIndex = newToDos.findIndex(
+      (toDo) => toDo.text === text);
+    newToDos[toDoIndex].completed = true;
+    setToDos(newToDos)
+  }; // Funcion actualizadora del estado
+
+  const deleteToDo = (text) => {
+    const newToDos = [...toDos];
+    const toDoIndex = newToDos.findIndex(
+      (toDo) => toDo.text === text);
+    newToDos.splice(toDoIndex, 1);
     setToDos(newToDos)
   };
 
@@ -42,12 +56,13 @@ function App() {
       />
 
       <ToDoList>
-        {searchedToDos.map(todo => (
+        {searchedToDos.map(toDo => (
           <ToDoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={completeToDo}
+            key={toDo.text}
+            text={toDo.text}
+            completed={toDo.completed}
+            onComplete={()=>completeToDo(toDo.text)}
+            onDelete={()=>deleteToDo(toDo.text)}
           />
         ))}
       </ToDoList>

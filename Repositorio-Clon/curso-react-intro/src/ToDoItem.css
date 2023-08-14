@@ -18,31 +18,3 @@
   .ToDoItem-p--complete {
     text-decoration: line-through;
   }
-  
-  .Icon {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 48px;
-    width: 48px;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .Icon-check {
-    position: absolute;
-    left: 12px;
-  }
-  .Icon-check--active {
-    color: #c1ff56;
-  }
-  
-  .Icon-delete {
-    position: absolute;
-    top: -24px;
-    right: 0;
-  }
-  .Icon-delete:hover {
-    color: red;
-  }

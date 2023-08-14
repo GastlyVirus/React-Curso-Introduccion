@@ -9,7 +9,7 @@ function ToDoSearch({ searchValue, setSearchValue }) {
             className="ToDoSearch"
             value={searchValue}
             onChange={(event) => {
-                setSearchValue(event.target.value)
+                setSearchValue(event.target.value);
             }}
         />
     )

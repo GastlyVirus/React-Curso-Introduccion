@@ -14,9 +14,9 @@
     left: 12px;
   }
 
-  .Icon-container-check--active {
-    color: #c1ff56;
-  }
+  /* .Icon-container-check--active {
+    color: #ffffff80;
+  } */
   
   .Icon-container-delete {
     position: absolute;
@@ -24,9 +24,9 @@
     right: 0;
   }
 
-  .Icon-container-delete:hover {
+  /* .Icon-container-delete:hover {
     color: red;
-  }
+  } */
 
   .Icon-svg {
     width: 1.5rem;
@@ -34,7 +34,7 @@
   }
 
   .Icon-container-check:hover .Icon-svg{
-    fill: #c1ff56;
+    fill: #98ca3f;
   }
 
   .Icon-container-delete:hover .Icon-svg{

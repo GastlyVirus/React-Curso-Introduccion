@@ -1,5 +1,5 @@
-import { CompleteIcon } from './CompleteIcon';
-import { DeleteIcon } from './DeleteIcon';
+import { CompleteIcon } from '../ToDoIcon/CompleteIcon';
+import { DeleteIcon } from '../ToDoIcon/DeleteIcon';
 import './ToDoItem.css';
 
 function ToDoItem(props) {
@@ -7,14 +7,17 @@ function ToDoItem(props) {
     <li className="ToDoItem">
 
       <CompleteIcon
-      completed={props.completed} 
+        completed={props.completed}
+        onComplete={props.onComplete}
       />
 
       <p className={`ToDoItem-p ${props.completed && "ToDoItem-p--complete"}`}>
         {props.text}
       </p>
 
-      <DeleteIcon />
+      <DeleteIcon
+        onDelete={props.onDelete}
+      />
 
     </li>
   )

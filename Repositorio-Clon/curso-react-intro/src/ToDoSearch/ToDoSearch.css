@@ -9,7 +9,7 @@
   text-align: center;
   font-family: 'Montserrat';
   font-weight: 400;
-
+  transition: .3s ease;
 }
 
 .ToDoSearch::placeholder {
@@ -19,9 +19,9 @@
 }
 
 .ToDoSearch:focus {
-  outline-color: #c1ff56;
+  outline-color: #98ca3f;
 }
 
 .ToDoSearch:hover {
-  box-shadow: 0px 5px 25px rgba(110, 250, 97, 0.5);
+  box-shadow: 0px 5px 25px #98ca3f;
 }

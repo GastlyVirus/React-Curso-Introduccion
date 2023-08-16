@@ -3,7 +3,11 @@ import { useLocalStorage } from './useLocalStorage';
 import { AppUI } from './AppUI';
 
 function App() {
-  const [toDos, saveToDos] = useLocalStorage('ToDoMachine_V1', []); // Guarda la lista "defaultToDos"
+  const {
+    item: toDos,
+    saveItem: saveToDos,
+    loading,
+    error } = useLocalStorage('ToDoMachine_V1', []); // Guarda la lista "defaultToDos"
   const [searchValue, setSearchValue] = React.useState(""); // Guarda el valor del input "ToDoSearch" para buscar
 
   const completedToDos = toDos.filter(toDo => toDo.completed).length; // Filtra los objetos del estado "toDos" que cumplan con la propiedad "completed" y devuelve la cantidad en numeros
@@ -34,6 +38,8 @@ function App() {
   return (
 
     <AppUI
+      loading={loading}
+      error={error}
       completedToDos={completedToDos}
       totalToDos={totalToDos}
       searchValue={searchValue}

@@ -1,6 +1,5 @@
 import React from 'react';
 
-// custom hooks
 function useLocalStorage(itemName, initialValue) {
     const [item, setItem] = React.useState(initialValue);
     const [loading, setLoading] = React.useState(true);

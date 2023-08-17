@@ -1,7 +1,8 @@
 .ToDoSearch {
+  color: #03091e;
   background: #fafafa;
   border-radius: 10px;
-  border: 2px solid #98ca3f;
+  border: 2px solid #3085d6;
   margin: 0 24px;
   height: 64px;
   width: calc(100% - 62px);
@@ -19,9 +20,9 @@
 }
 
 .ToDoSearch:focus {
-  outline-color: #98ca3f;
+  outline-color: #3085d6;
 }
 
 .ToDoSearch:hover {
-  box-shadow: 0px 5px 25px #98ca3f;
+  box-shadow: 0px 5px 25px #3085d6;
 }

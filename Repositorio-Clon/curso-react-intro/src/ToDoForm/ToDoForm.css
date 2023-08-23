@@ -1,0 +1,107 @@
+form {
+    width: 90%;
+    max-width: 300px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: 33px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+label {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #03091e;
+    margin-bottom: 26px;
+}
+
+textarea {
+    color: #03091e;
+    background-color: #fafafa;
+    border: 2px solid #3085d6;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    padding: 12px;
+    height: 96px;
+    width: calc(100% - 25px);
+}
+
+textarea::placeholder {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    color: #A5A5A5;
+}
+
+textarea:hover {
+    box-shadow: 0px 5px 10px #3085d6;
+}
+
+textarea:focus {
+    outline-color: #3085d6;
+    box-shadow: 0px 5px 10px #3085d6;
+}
+
+.ToDoForm-ButtonContainer {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.ToDoForm-Button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    color: #03091e;
+    font-weight: 400;
+    width: 120px;
+    height: 48px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Montserrat";
+}
+
+.ToDoForm-Button--Agregar {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    color: #fafafa;
+    font-weight: 400;
+    width: 120px;
+    height: 48px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Montserrat";
+    background: #3085d6;
+}
+
+.ToDoForm-Button--Agregar:hover {
+    box-shadow: 0px 5px 10px #3085d6;
+    scale: 0.98;
+    transition: .3s ease;
+}
+
+.ToDoForm-Button--Cancelar {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    color: #fafafa;
+    font-weight: 400;
+    width: 120px;
+    height: 48px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Montserrat";
+    background: #03091e;
+}
+
+.ToDoForm-Button--Cancelar:hover {
+    box-shadow: 0px 5px 10px #03091e;
+    scale: 0.98;
+    transition: .3s ease;
+}

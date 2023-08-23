@@ -11,6 +11,7 @@ function ToDoProvider({ children }) {
         loading,
         error } = useLocalStorage('ToDoMachine_V1', []); // Guarda la lista "defaultToDos"
     const [searchValue, setSearchValue] = React.useState(""); // Guarda el valor del input "ToDoSearch" para buscar
+    const [openModal, setOpenModal] = React.useState(false); // Guarda el valor del modal para agregar ToDos
 
     const completedToDos = toDos.filter(toDo => toDo.completed).length; // Filtra los objetos del estado "toDos" que cumplan con la propiedad "completed" y devuelve la cantidad en numeros
     const totalToDos = toDos.length; // Devuelve la cantidad total de objetos dentro del estado "toDos"
@@ -36,6 +37,17 @@ function ToDoProvider({ children }) {
         newToDos.splice(toDoIndex, 1);
         saveToDos(newToDos)
     };
+
+    const addNewToDoValue = (text) => {
+        const newToDos = [...toDos];
+        newToDos.push({
+            text,
+            completed: false,
+        })
+        saveToDos(newToDos)
+    }
+
+
     return (
         <ToDoContext.Provider value={{
             loading,
@@ -47,6 +59,9 @@ function ToDoProvider({ children }) {
             searchedToDos,
             completeToDo,
             deleteToDo,
+            openModal,
+            setOpenModal,
+            addNewToDoValue
         }}>
             {children}
         </ToDoContext.Provider>

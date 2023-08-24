@@ -47,7 +47,6 @@ function ToDoProvider({ children }) {
         saveToDos(newToDos)
     }
 
-
     return (
         <ToDoContext.Provider value={{
             loading,

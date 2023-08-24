@@ -2,10 +2,11 @@
   "name": "platzi-intro-react-base",
   "version": "0.1.0",
   "dependencies": {
+    "nth-check": "^2.0.1",
     "react": "^18",
     "react-dom": "^18",
     "react-scripts": "5.0.1",
-    "sweetalert2": "^11.7.23",
+    "sweetalert2": "^11.6.13",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
